@@ -1,13 +1,15 @@
-# Fragments and Portals
+# React Fragments
 
-## Problem Statement
+## Objectives
 
+- Explain the use of fragments in React components
 
-## Fragments
+## Why Fragments
 
-It is required that every React component must return a single JSX element, and
-we often use the HTML-like elements such as `div`. When rendered, this creates a
-DOM element for that outer `div`, which is sometimes unnecessary.
+It is required that every React component must return a single JSX element.
+Because of this, we often use the HTML-like elements such as `div` to wrap other
+elements within the JSX. When rendered, this creates a DOM element for that
+outer `div`, which is sometimes unnecessary. For example:
 
 ```js
 class ChildComponent extends Component {
@@ -48,10 +50,10 @@ This set up creates a DOM structure that looks like this:
 </div>
 ```
 
-Those nested `div`s don't have any purpose here and don't have any styling.
-Without them though, we would have an error as there are _two_ `p` tags being
-returned in the ChildComponent. Instead, we could use JSX Fragments,
-preventing the extra `div`s from being added to the DOM:
+Those nested `div`s don't have any purpose here and don't have any styling
+besides their default properties. Without them though, we would have an error as
+there are _two_ `p` tags being returned in the ChildComponent. Instead, we could
+use JSX Fragments, preventing the extra `div`s from being added to the DOM:
 
 ```js
 class ChildComponent extends Component {
@@ -90,18 +92,32 @@ With the fragment in place, the DOM will now look like this:
 ```
 
 The `<>` and `</>` are shorthand for `<React.Fragment>` and `</React.Fragment>`
-and can be used interchangeably. They allow a component to return multiple
-elements _without_ adding a wrapper element that adds to the DOM.
+and can be used interchangeably. **They allow a component to return multiple
+elements without adding a wrapper element that adds to the DOM.**
 
+Fragments are not restricted to the outermost element being returned in JSX.
+Imagine you had an array of book objects in your props that you want rendered to
+the DOM. Each book has multiple attributes you want to display, but you don't
+need an element that wraps around these attributes. A fragment can be used here,
+and can still take a key attribute:
 
-### Objective 1
-Content moving student to objective 1
+```js
+const Bookshelf = props => {
+  return (
+    <section>
+      {props.books.map(book => (
+        <React.Fragment key={item.id}>
+          <h1>{book.title}</h1>
+          <h2>{book.author}</h2>
+        </React.Fragment>
+      ))}
+    </section>
+  );
+}
+```
 
-### Objective 2
-Content moving student to objective 2
+## Conclusion
 
-#### Key Terms (if applicable)
-
-#### Resources (if applicable)
-
-### Conclusion
+Fragments are a small addition to React overall, but when used properly, can
+reduce a lot of unnecessary DOM bloat. They allow us a bit more flexibility in
+how we write our components, eliminating the need for wrapper elements.
