@@ -116,6 +116,9 @@ const Bookshelf = props => {
 }
 ```
 
+> According to the [React docs](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html#support-for-fragment-syntax): 
+> As of 16.2.0, support for fragment shorthand syntax `<><p>Hello</p></>` will vary depending on the tools you use to build your app. A stable release may take a bit longer as we await adoption by upstream projects. Support for JSX fragments is available in Babel v7.0.0-beta.31 and above! So for compatibility purposes, it may be better to fully write out `<React.Fragment><p>Hello</p></React.Fragment>` for the time being.
+
 ## Conclusion
 
 Fragments are a small addition to React overall, but when used properly, can
