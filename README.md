@@ -126,3 +126,7 @@ function Bookshelf(props) {
 Fragments are a small addition to React overall, but when used properly, can
 reduce a lot of unnecessary DOM bloat. They allow us a bit more flexibility in
 how we write our components, eliminating the need for wrapper elements.
+
+## Resources
+
+- [React Fragment Support](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html)
