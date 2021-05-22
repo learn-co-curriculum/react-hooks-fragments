@@ -1,8 +1,8 @@
 # React Fragments
 
-## Objectives
+## Learning Goals
 
-- Explain the use of fragments in React components
+- Use of fragments in React components to return top-level elements
 
 ## Why Fragments
 
@@ -48,8 +48,9 @@ This set up creates a DOM structure that looks like this:
 
 Those nested `div`s don't have any purpose here and don't have any styling
 besides their default properties. Without them though, we would have an error as
-there are _two_ `p` tags being returned in the `ChildComponent`. Instead, we could
-use JSX Fragments, preventing the extra `div`s from being added to the DOM:
+there are _two_ `p` tags being returned in the `ChildComponent`. Instead, we
+could use React Fragments, preventing the extra `div`s from being added to the
+DOM:
 
 ```js
 function ChildComponent() {
