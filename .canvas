@@ -4,4 +4,7 @@
   :course_id: 3264
   :canvas_url: https://learning.flatironschool.com/courses/3264/pages/64293
   :type: page
-    
+- :id: 64293
+  :course_id: 3264
+  :canvas_url: https://learning.flatironschool.com/courses/3264/pages/bonus-react-fragments
+  :type: page
