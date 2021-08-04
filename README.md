@@ -11,7 +11,7 @@ Because of this, we often use the elements such as `div` to wrap other elements
 within the JSX. When rendered, this creates a DOM element for that outer `div`,
 which is sometimes unnecessary. For example:
 
-```js
+```jsx
 function ChildComponent() {
   return (
     <div>
@@ -52,7 +52,7 @@ there are _two_ `p` tags being returned in the `ChildComponent`. Instead, we
 could use React Fragments, preventing the extra `div`s from being added to the
 DOM:
 
-```js
+```jsx
 function ChildComponent() {
   //The wrapping 'div' here has been replaced with a React fragment
   return (
@@ -89,7 +89,7 @@ adding a wrapper element that adds to the DOM.**
 
 You can also use the shorthand syntax for fragments to make your JSX cleaner:
 
-```js
+```jsx
 function ChildComponent() {
   // <> === <React.Fragment>
   return (
@@ -107,7 +107,7 @@ the DOM. Each book has multiple attributes you want to display, but you don't
 need an element that wraps around these attributes. A fragment can be used here,
 and can still take a key attribute:
 
-```js
+```jsx
 function Bookshelf(props) {
   return (
     <section>
