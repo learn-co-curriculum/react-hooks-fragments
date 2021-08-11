@@ -2,13 +2,13 @@
 
 ## Learning Goals
 
-- Use of fragments in React components to return top-level elements
+- Use fragments in React components to return top-level elements
 
 ## Why Fragments
 
 It is required that every React component must return a **single** JSX element.
-Because of this, we often use the elements such as `div` to wrap other elements
-within the JSX. When rendered, this creates a DOM element for that outer `div`,
+Because of this, we often use elements such as `div` to wrap other elements
+within our JSX. When rendered, this creates a DOM element for that outer `div`,
 which is sometimes unnecessary. For example:
 
 ```jsx
@@ -31,7 +31,7 @@ function ParentComponent() {
 }
 ```
 
-This set up creates a DOM structure that looks like this:
+This setup creates a DOM structure that looks like this:
 
 ```html
 <div class="parent">
